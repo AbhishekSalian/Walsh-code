@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import numpy as np
 # If we want to generate walsh code 2 so  power of 2 is 1 
@@ -14,14 +12,13 @@ def walsh_code(order):
     W = np.array([0])
     for i in range(order):
         W = np.tile(W, (2, 2))
-        half = 1 << i
+        half = 2**i
         W[half:, half:] = np.logical_not(W[half:, half:])
     return W
 
-print("Walsh code is:",walsh_code(5))
+print("Walsh code 32 is:",walsh_code(5))
 
 
-# In[ ]:
 
 
 
